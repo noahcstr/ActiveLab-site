@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Reviews | Le Labo du Sport - Test : Trépied QUECHUA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS du site (Style Blog/Magazine) */
+        :root {
+            --primary-color: #007bff; /* Bleu vif pour l'accent */
+            --accent-color: #f7931e; /* Orange pour l'appel à l'action */
+            --text-color: #333;
+            --bg-light: #f4f4f9;
+            --bg-white: #ffffff;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* En-tête (Header) */
+        .header {
+            background-color: var(--bg-white);
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            margin-left: 20px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Mise en page principale */
+        .main-content {
+            padding: 40px 0;
+            display: flex;
+            gap: 30px;
+        }
+
+        .article-area {
+            flex: 3; /* L'article prend plus de place */
+            background-color: var(--bg-white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .sidebar {
+            flex: 1; /* La barre latérale est plus étroite */
+        }
+
+        /* Style de l'Article */
+        .article h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-top: 0;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+
+        .article-meta {
+            font-size: 0.9em;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .article img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        /* Fiche technique (mise en avant) */
+        .specs-box {
+            background-color: var(--bg-light);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .specs-box h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .specs-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .specs-box li {
+            padding: 5px 0;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        .specs-box li strong {
+            display: inline-block;
+            width: 120px;
+        }
+        
+        /* Note et Verdict */
+        .review-verdict {
+            background-color: #e0f7fa; /* Fond léger */
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 30px;
+            border: 1px solid var(--primary-color);
+        }
+
+        .review-note {
+            font-size: 3em;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin: 10px 0;
+        }
+
+        .review-verdict p {
+            font-style: italic;
+            font-size: 1.1em;
+            color: var(--text-color);
+        }
+
+        /* Bouton CTA (Call to Action) */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin: 20px 0;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #cc7500;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background-color: var(--bg-white);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-widget h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4em;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 10px;
+        }
+
+        .sidebar-widget ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar-widget li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .sidebar-widget a {
+            text-decoration: none;
+            color: var(--text-color);
+            transition: color 0.3s;
+        }
+
+        .sidebar-widget a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Pied de page */
+        .footer {
+            background-color: #333;
+            color: var(--bg-white);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+            margin-top: 30px;
+        }
+
+        .footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        
+        /* Media Queries pour le Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav {
+                margin-top: 15px;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            .nav a {
+                margin: 5px 10px 5px 0;
+            }
+            .main-content {
+                flex-direction: column;
+            }
+            .article-area, .sidebar {
+                flex: 1;
+                width: 100%;
+            }
+            .article h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Active<span>Reviews</span></h1>
+                <p style="font-size: 0.8em; margin: 0; color: #777;">Le Labo du Sport par ActiveLab</p>
+            </div>
+            <nav class="nav">
+                <a href="#">Accueil</a>
+                <a href="#">Randonnée</a>
+                <a href="#">Camping</a>
+                <a href="#">À Propos</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-content container">
+
+        <div class="article-area">
+            <article class="article">
+                
+                <h2>TEST MATOS ⛺ : Le Trépied de camping QUECHUA, l'accessoire "must-have" pour vos pauses !</h2>
+                
+                <p class="article-meta">Publié le 21 Octobre 2025 par ActiveLab Team dans Camping & Bivouac</p>
+
+                <img src="https://via.placeholder.com/1200x500?text=QUECHUA+Trépied+de+camping+gris+en+action" alt="Trépied de camping QUECHUA en situation">
+
+                <p>Dans le cadre de notre programme de promotion, ActiveLab s'est intéressé à un produit qui incarne parfaitement la philosophie de l'équipement outdoor : simplicité, légèreté et efficacité. Aujourd'hui, nous mettons sur le banc de test le Trépied de camping QUECHUA, un petit siège qui promet de vous offrir une pause bien méritée sans alourdir votre sac. Voyons si ce petit prix tient la route sur le terrain !</p>
+
+                <h3>Analyse technique : L'essentiel, et rien de plus</h3>
+                
+                <div class="specs-box">
+                    <h3>Fiche Technique Express</h3>
+                    <ul>
+                        <li><strong>Prix Indicatif :</strong> Moins de 7 € 🤯</li>
+                        <li><strong>Poids :</strong> ~1 kg</li>
+                        <li><strong>Charge Maximale :</strong> 110 kg</li>
+                        <li><strong>Dimensions Plié :</strong> 60 x 9 x 9 cm (Compact)</li>
+                        <li><strong>Matériaux :</strong> Structure Acier, Tissu Polyester</li>
+                        <li><strong>Garantie :</strong> 2 ans</li>
+                    </ul>
+                </div>
+                
+                <p>Dès la prise en main, le trépied surprend par sa légèreté et sa compacité. Plié, il se glisse facilement le long d'un sac à dos de randonnée. Le système de pliage est d'une simplicité enfantine : une simple sangle élastique maintient les tubes d'acier ensemble pour le transport.</p>
+
+                <h3>Le Test Terrain : Montage, Stabilité et Confort</h3>
+                
+                <h4>⏱ Vitesse d'installation (5/5)</h4>
+                <p>Le montage est instantané. Il suffit de relâcher la sangle et les pieds se déploient d'eux-mêmes. En moins de deux secondes, vous êtes assis. Idéal pour une pause rapide sans effort.</p>
+
+                <h4>⛰ Stabilité et Résistance (4/5)</h4>
+                <p>Avec une structure en acier et un tissu solide, il supporte sans broncher la charge annoncée de 110 kg. Nous l'avons testé sur terre battue, gravier et herbe humide : l'assise est stable. Attention toutefois sur des terrains trop meubles (sable) où les pieds peuvent s'enfoncer légèrement.</p>
+
+                <h4>😌 Confort d'Assise (3/5)</h4>
+                <p>C'est un trépied, pas un fauteuil club ! La hauteur de 41 cm est convenable, mais l'absence de dossier et la surface triangulaire limitent le confort aux courtes pauses. Il est parfait pour chausser vos bottes, manger un sandwich ou attendre au bord d'un lac, mais n'est pas conçu pour une longue soirée au coin du feu. C'est un siège d'appoint excellent.</p>
+                
+                <h3>Conclusion ActiveLab : L'Achat Intelligent</h3>
+                
+                <p>Le Trépied de camping QUECHUA ne révolutionne pas le camping, mais il apporte une solution pratique et durable à un prix défiant toute concurrence. Il répond parfaitement à son cahier des charges : être un siège d'appoint léger et résistant pour les activités de plein air.</p>
+                
+                <div class="review-verdict">
+                    <p>Note ActiveLab :</p>
+                    <div class="review-note">4.5/5</div>
+                    <p>"Le choix parfait si votre budget et le poids de votre sac sont vos priorités. Un investissement minimal pour un gain de confort maximal en randonnée ou en bivouac."</p>
+                </div>
+
+                <p style="text-align: center;">
+                    <a href="#" class="cta-button" onclick="alert('https://www.decathlon.fr/p/trepied-de-camping-gris/_/R-p-13373?mc=8786303&c=gris&gad_campaignid=14631499339&gad_source=1&gbraid=0AAAAADonRCazwTv0wrRycd1pPaahPt9_i&gclid=CjwKCAjw3tzHBhBREiwAlMJoUnKKR_Qs308NqP4ZKa2nELHf-I_eVXeTnB7d6bEvFeq4sKxV1BCn2RoCjMoQAvD_BwE&utm_campaign=fr_t-perf_ct-shopp_n-shopping-mq-hiking-mp_ts-bra_f-cv_o-roas_&utm_medium=sea&utm_source=google&utm_term=_n-shopping-mq-hiking-mp_ts-bra_pt-pb_yy-camping-et-bivouac-randonnee-trekking_trepied'); return false;">
+                        ➡️ Découvrir le Trépied QUECHUA sur le site partenaire
+                    </a>
+                </p>
+
+                <hr>
+
+                <p style="font-size: 0.9em; text-align: center;">*Ceci est un article réalisé en partenariat avec ActiveLab dans le cadre de la promotion du matériel de camping QUECHUA.*</p>
+
+            </article>
+        </div>
+
+        <aside class="sidebar">
+            
+            <div class="sidebar-widget">
+                <h3>À Propos d'Active Reviews</h3>
+                <p>Nous sommes le laboratoire de test indépendant d'ActiveLab. Notre mission est de décortiquer le matériel sportif et outdoor pour vous offrir des avis honnêtes et basés sur l'expérience terrain. Notre équipe est composée de passionnés (et de cobayes !).</p>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Tests Récents</h3>
+                <ul>
+                    <li><a href="#">Sac de couchage ultraléger 10°C</a></li>
+                    <li><a href="#">Comparatif : 5 lampes frontales 2025</a></li>
+                    <li><a href="#">Chaussures de trail : le modèle qui a tout</a></li>
+                    <li><a href="#">Guide d'achat : Votre première tente de bivouac</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-widget">
+                <h3>Catégories</h3>
+                <ul>
+                    <li><a href="#">Randonnée (12)</a></li>
+                    <li><a href="#">Camping & Bivouac (8)</a></li>
+                    <li><a href="#">Course à pied (5)</a></li>
+                    <li><a href="#">Cyclisme (3)</a></li>
+                </ul>
+            </div>
+
+        </aside>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Active Reviews | Propulsé par <a href="#">ActiveLab</a> | Mentions Légales</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav a, .sidebar a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // Empêche la redirection réelle pour cette démo
+                    e.preventDefault(); 
+                    console.log(`Navigation vers : ${link.textContent}`);
+                    // Vous pouvez ici ajouter une logique pour changer le contenu si c'était une application SPA
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
