@@ -10,6 +10,7 @@
         :root {
             --primary-color: #007bff; /* Bleu vif pour l'accent */
             --accent-color: #f7931e; /* Orange pour l'appel à l'action */
+            --youtube-red: #FF0000;   /* Rouge YouTube */
             --text-color: #333;
             --bg-light: #f4f4f9;
             --bg-white: #ffffff;
@@ -214,6 +215,47 @@
             color: var(--primary-color);
         }
 
+        /* --- NOUVEAU : STYLE WIDGET YOUTUBE --- */
+        .youtube-widget {
+            text-align: center;
+            border-top: 4px solid var(--youtube-red);
+        }
+
+        .yt-icon svg {
+            width: 60px;
+            height: 60px;
+            fill: var(--youtube-red);
+            margin: 10px 0;
+            transition: transform 0.3s;
+        }
+
+        .youtube-widget:hover .yt-icon svg {
+            transform: scale(1.1);
+        }
+
+        .yt-text {
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .yt-btn {
+            display: block;
+            background-color: var(--youtube-red);
+            color: white !important; /* Force white text */
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
+        }
+
+        .yt-btn:hover {
+            background-color: #cc0000;
+            color: white;
+        }
+        /* ------------------------------------- */
+
         /* Pied de page */
         .footer {
             background-color: #333;
@@ -342,6 +384,18 @@
 
         <aside class="sidebar">
             
+            <div class="sidebar-widget youtube-widget">
+                <h3>Suivez-nous !</h3>
+                <div class="yt-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </div>
+                <p class="yt-text">Découvrez nos tests vidéo exclusifs et abonnez-vous !</p>
+                <a href="https://www.youtube.com/@ActiveLab-c6q" target="_blank" class="yt-btn">
+                    Voir la chaîne YouTube ▶
+                </a>
+            </div>
             <div class="sidebar-widget">
                 <h3>À Propos d'Active Reviews</h3>
                 <p>Nous sommes le laboratoire de test indépendant d'ActiveLab. Notre mission est de décortiquer le matériel sportif et outdoor pour vous offrir des avis honnêtes et basés sur l'expérience terrain. Notre équipe est composée de passionnés (et de cobayes !).</p>
@@ -381,10 +435,11 @@
             const navLinks = document.querySelectorAll('.nav a, .sidebar a');
             navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
-                    // Empêche la redirection réelle pour cette démo
-                    e.preventDefault(); 
-                    console.log(`Navigation vers : ${link.textContent}`);
-                    // Vous pouvez ici ajouter une logique pour changer le contenu si c'était une application SPA
+                    // Empêche la redirection réelle pour cette démo si le lien est #
+                    if(link.getAttribute('href') === '#') {
+                        e.preventDefault(); 
+                        console.log(`Navigation vers : ${link.textContent}`);
+                    }
                 });
             });
         });
@@ -393,7 +448,3 @@
 </body>
 
 </html>
-
-
-
-
